@@ -6,36 +6,23 @@
   */
 int main(void)
 {
-	int a, b, c, d;
+	int num1, num2;
 
-	for (a = 48; a <= 57; b++)
+	for (num1 = 0; num1 <= 98; num1++)
 	{
-		for (b = 48; b <= 57; b++)
+		for (num2 = num1 + 1; num2 <= 99; num2++)
 		{
-			for (c = 48; c <= 57; c++)
-			{
-				for (d = 48; d <= 57; d++)
-				{
-					if (((c + d) > (a + b) &&  c >= a) || a < c)
-					{
-						putchar(a);
-						putchar(b);
-						putchar(' ');
-						putchar(c);
-						putchar(d);
+			putchar((num1 / 10) + '0');
+			putchar((num1 % 10) + '0');
+			putchar(' ');
+			putchar((num2 / 10) + '0');
+			putchar((num2 % 10) + '0');
 
-					if (a + b + c + d == 227 && a == 57)
-					{
-					break;
-					}
-					else
-					{
-					putchar(',');
-					putchar(' ');
-					}
-					}
-				}
-			}
+			if (num1 == 98 && num2 == 99)
+				continue;
+
+			putchar(',');
+			putchar(' ');
 		}
 	}
 
