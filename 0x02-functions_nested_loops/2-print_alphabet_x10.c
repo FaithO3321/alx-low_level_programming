@@ -1,19 +1,20 @@
 #include "main.h"
 /**
- * main - Entry point
- * Description - Program that prints alphabet 10 times in lower case
- * Return: 0
- */
+ * print_alphabet_x10 - Entry point
+ * Description - Program to print alphabets
+ * Return: Always 0
+*/
 void print_alphabet_x10(void)
 {
-	char alphabet, num;
+	int i;
+	int j;
 
-	for (alphabet = 'a'; alphabet <= 'z'; alphabet++)
+	for (i = 1; i <= 10; i++)
 	{
-		for (num = '0'; num = '9'; num++)
+		for (j = 97; j <= 122; j++)
 		{
-			_putchar(alphabet);
+			_putchar(j);
 		}
-	_putchar('\n');
+		_putchar('\n');
 	}
 }
