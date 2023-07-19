@@ -2,7 +2,7 @@
 /**
  * jack_bauer - prints ever minute of the day of Jack Bauer
  *
- * Return: nil return
+ * Return: 0
 */
 void jack_bauer(void)
 {
