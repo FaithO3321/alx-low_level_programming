@@ -6,7 +6,6 @@
 */
 int _islower(int c)
 {
-	int c;
 
 	if (c >= 97 && c <= 122)
 	{
@@ -15,5 +14,6 @@ int _islower(int c)
 	else
 	{
 		return (0);
+	}
 	_putchar('\n');
 }
