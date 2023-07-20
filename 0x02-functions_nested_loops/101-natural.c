@@ -7,7 +7,7 @@
 */
 int main(void)
 {
-	int sum3 = 0, sum5 = 0, sum23 = 0;
+	int sum3 = 0, sum5 = 0;
 	int i;
 
 	for (i = 0; i < 1024; i++)
@@ -20,12 +20,8 @@ int main(void)
 		{
 			sum5 += i;
 		}
-		if (i % 23 == 0)
-		{
-			sum23 += i;
-		}
 	}
-	printf("%d\n", sum3 + sum5 - sum23);
+	printf("%d\n", sum3, sum5);
 	return (0);
 }
 
