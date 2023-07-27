@@ -6,7 +6,7 @@
 */
 char *cap_string(char *str)
 {
-	char separators[] = " \t\n,;.!?\"(){}";
+	char separators[] = { || \t || \n || , || ; || . || ! || ? || " || () || {}};
 	char *ptr = str;
 	int i, capitalize_next = 1;
 
