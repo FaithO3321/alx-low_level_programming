@@ -1,6 +1,10 @@
 #include "main.h"
 #include <stdio.h>
-
+/**
+ * main - entry point
+ * Description: Function that adds one line to a code
+ * Return: 0
+*/
 int main(void)
 {
   int n;
