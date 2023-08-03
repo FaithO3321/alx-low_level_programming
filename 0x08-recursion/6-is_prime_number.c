@@ -30,5 +30,5 @@ int is_prime_number(int n)
 		return (1);
 	else if (n % 2 == 0 || n % 3 == 0)
 		return (0);
-	return (is_prime_helper(n, 5));
+	return (is_prime_number(n, 5));
 }
