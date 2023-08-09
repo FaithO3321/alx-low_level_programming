@@ -13,20 +13,16 @@ char *_strdup(char *str)
 	copy = malloc(sizeof(char) * count + 1);
 
 	if (str == NULL)
-	{
 		return (NULL);
-	}
+
 	for (j = 0; str[j] != '\0'; j++)
-	{
 		count++;
-	}
+
 	if (copy == NULL)
-	{
 		return (NULL);
-	}
+
 	for (j = 0; str[j] != '\0'; j++)
-	{
 		copy[j] = str[j];
-	}
+
 	return (copy);
 }
