@@ -1,46 +1,53 @@
 #include <stdio.h>
 #include <stdlib.h>
 /**
- * main - prints minimum coins to make change
- * @argc: arguement count
- * @argv: argument vector
+ * minCoins - checks for the minimum coins to make change
+ * @cents: value of change
  * Return: 0
 */
-int main(int argc, char **argv[])
+int minCoins(int cents)
 {
-	int cents, mncoin = 0;
+	int coins[] = {25, 10, 5, 2, 1};
+	int numCoins = sizeof(coins) / sizeof(coins[0]);
 
-	if (argc == 1 || argc > 2)
+	int count = 0;
+	int i;
+
+	for (i = 0; i < numCoins; i++)
 	{
-		printf("Error\n");
+		count += cents / coins[i];
+		cents %= coins[i];
+	}
+	return (count);
+}
+
+/**
+ * main - prints the minimum number of coins for change
+ * @argc: argument count
+ * @argv: argument vector
+ * Return: 0 for success, 1 for error
+*/
+int main(int argc, char *argv[])
+{
+	int cents;
+
+	if (argc != 2)
+	{
+		printf("Erro/n");
 		return (1);
 	}
+
 	cents = atoi(argv[1]);
 
-	while (cents > 0)
+	if (cents > 0)
 	{
-		if (cents > 25)
-		{
-			cents -= 25;
-		}
-		if (cents > 10)
-		{
-			cents -= 10;
-		}
-		if (cents > 5)
-		{
-			cents -= 5;
-		}
-		if (cents > 2)
-		{
-			cents -= 2;
-		}
-		if (cents > 1)
-		{
-			cents -= 1;
-		}
-		mncoin += 1;
+		printf("0\n");
 	}
-	printf("%d\n", mncoin);
+	else
+	{
+		int numCoins = minCoins(cents);
+
+		printf("%d\n", numCoins);
+	}
 	return (0);
 }
