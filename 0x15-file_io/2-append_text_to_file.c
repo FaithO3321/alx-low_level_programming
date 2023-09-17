@@ -1,20 +1,5 @@
 #include "main.h"
 /**
- * _strlen - returns the length of the string
- * @s: string source to be measured
- * Return: length of string
-*/
-int _strlen(char *s)
-{
-	int length = 0;
-
-	while (*s++)
-		length++;
-
-	return (length);
-}
-
-/**
  * append_text_to_file - appends text at the end of a file
  * @filename: name of the file
  * @text_content: NULL terminated string to add at the end of the file
@@ -25,25 +10,24 @@ int _strlen(char *s)
 */
 int append_text_to_file(const char *filename, char *text_content)
 {
-	int fd, n;
+	int o, w, len = 0;
 
-	if (!filename)
+	if (filename == NULL)
 		return (-1);
 
-	fd = open(filename, O_WRONLY | O_APPEND | O_CREAT, 0644);
-	if (fd == -1)
-		return (-1);
-
-	fchown(fd, 1000, 1000);
-
-	if (text_content)
+	if (text_content != NULL)
 	{
-		n = _strlen(text_content);
-		if (write(fd, text_content, n) != n)
-			return (-1);
+		for (len = 0; text_content[len];)
+			len++;
 	}
 
-	close(fd);
+	o = open(filename, O_WRONLY | O_APPEND);
+	w = write(o, text_content, len);
+	if (o == -1 || w == -1)
+		return (-1);
+
+	close(o);
 
 	return (1);
 }
+
